@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type="text/javascript">
+		function Cancelar() {
+			location.href = "http://localhost:3000/"
+		}
+		function Salvar() {
+			var email = require('../mail.js'); // ----------NÃO FUNCIONOU---------------
+		}
+	</script>
+
+	<title>Novo Cliente</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="blurBg-false">
+
+	<script type="text/javascript">
+		var email = require('../mail.js')
+		email();
+	</script>
+
+	<style type="text/css">
+		body {
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-image: url(https://i.ibb.co/2SZh4f9/solar.jpg);
+			background-size: 100%;
+		}
+	</style>
+
+	<script>
+		function formatar(mascara, documento) {
+			var i = documento.value.length;
+			var saida = mascara.substring(0, 1);
+			var texto = mascara.substring(i)
+
+			if (texto.substring(0, 1) != saida) {
+				documento.value += texto.substring(0, 1);
+			}
+		}
+	</script>
+
+	<link rel="stylesheet" href="/stylesheets/new_files/formoid-solid-blue.css" type="text/css" />
+	<script type="text/javascript" src="/stylesheets/new_files/jquery.min.js"></script>
+	<form class="formoid-solid-blue"
+		style="background-color:#ffffff;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:900px;min-width:150px"
+		method="post">
+		<div class="title">
+			<h2>Novo Cliente</h2>
+		</div>
+		<div class="element-separator">
+			<hr>
+			<h3 class="section-break-title">Dados Pessoais</h3>
+		</div>
+		<div class="element-name"><label class="title"><span class="required"></span></label><span
+				class="nameFirst"><input placeholder=" Nome*" type="text" size="8" name="name[first]"
+					required="required" /><span class="icon-place"></span></span><span class="nameLast"><input
+					placeholder=" Sobrenome*" type="text" size="14" name="name[last]" required="required" /><span
+					class="icon-place"></span></span></div>
+		<div class="element-number"><label class="title"><span class="required"></span></label>
+			<div class="item-cont"><input class="medium" type="text" min="11" max="11" name="number" required="required"
+					placeholder="CPF*" value="" /><span class="icon-place"></span></div>
+		</div>
+		<div class="element-phone"><label class="title"><span class="required"></span></label>
+			<div class="item-cont"><input class="medium" type="tel" pattern="[+]?[\.\s\-\(\)\*\#0-9]{3,}" maxlength="24"
+					name="phone" required="required" placeholder="Telefone*" value="" /><span class="icon-place"></span>
+			</div>
+		</div>
+		<div class="element-email"><label class="title"><span class="required"></span></label>
+			<div class="item-cont"><input class="medium" type="email" name="email" value="" required="required"
+					placeholder="E-mail*" /><span class="icon-place"></span></div>
+		</div><br />
+		<div class="element-separator">
+			<hr>
+			<h3 class="section-break-title">Endereço Principal</h3>
+		</div>
+		<div class="element-select"><label class="title"><span class="required"></span></label>
+			<div class="item-cont">
+				<div class="medium"><span><select name="select1" required="required">
+							<option value="Comercial">Comercial</option>
+							<option value="Residencial">Residencial</option>
+							<option value="Correspondência">Correspondência</option>
+							<option value="Cobrança">Cobrança</option>
+							<option value="Rural">Rural</option>
+							<option value="Casa de praia">Casa de praia</option>
+						</select><i></i><span class="icon-place"></span></span></div>
+			</div>
+		</div>
+		<div class="element-number"><label class="title"><span class="required"></span></label>
+			<div class="item-cont"><input class="small" type="text" min="0" max="100" name="number1" required="required"
+					placeholder="CEP*" OnKeyPress="formatar('###-##', this)" value="" /><span class="icon-place"></span>
+			</div>
+		</div>
+		<div class="element-input"><label class="title"><span class="required"></span></label>
+			<div class="item-cont"><input class="medium" type="text" name="input" required="required"
+					placeholder="Logradouro*" /><span class="icon-place"></span></div>
+		</div>
+		<div class="element-number"><label class="title"><span class="required"></span></label>
+			<div class="item-cont"><input class="small" type="text" min="0" max="100" name="number2" required="required"
+					placeholder="Número*" value="" /><span class="icon-place"></span></div>
+		</div>
+		<div class="element-input"><label class="title"></label>
+			<div class="item-cont"><input class="large" type="text" name="input2" placeholder="Complemento" /><span
+					class="icon-place"></span></div>
+		</div>
+		<div class="element-input"><label class="title"><span class="required"></span></label>
+			<div class="item-cont"><input class="medium" type="text" name="input1" required="required"
+					placeholder="Cidade*" /><span class="icon-place"></span></div>
+		</div>
+		<div class="element-select"><label class="title"><span class="required"></span></label>
+			<div class="item-cont">
+				<div class="small"><span><select name="select" required="required" placeholder="Estado*">
+							<option value="       AC"> AC</option>
+							<option value="       AL"> AL</option>
+							<option value="       AP"> AP</option>
+							<option value="       AM"> AM</option>
+							<option value="       BA"> BA</option>
+							<option value="       CE"> CE</option>
+							<option value="       DF"> DF</option>
+							<option value="       ES"> ES</option>
+							<option value="       GO"> GO</option>
+							<option value="       MA"> MA</option>
+							<option value="       MS"> MS</option>
+							<option value="       MT"> MT</option>
+							<option value="       MG"> MG</option>
+							<option value="       PA"> PA</option>
+							<option value="       PB"> PB</option>
+							<option value="       PR"> PR</option>
+							<option value="       PE"> PE</option>
+							<option value="       PI"> PI</option>
+							<option value="       RJ"> RJ</option>
+							<option value="       RN"> RN</option>
+							<option value="       RS"> RS</option>
+							<option value="       RO"> RO</option>
+							<option value="       RR"> RR</option>
+							<option value="       SC"> SC</option>
+							<option value="       SP"> SP</option>
+							<option value="       SE"> SE</option>
+							<option value="       TO"> TO</option>
+						</select><i></i><span class="icon-place"></span></span></div>
+			</div>
+		</div><br />
+
+		<script>
+			function Mudarestado(el) {
+				var display = document.getElementById(el).style.display;
+				if (display == "none")
+					document.getElementById(el).style.display = 'block';
+				else
+					document.getElementById(el).style.display = 'none';
+			}
+			id = "none";
+		</script>
+
+		<div id="minhaDiv">
+			<link rel="stylesheet" href="/stylesheets/new_files/formoid-solid-blue.css" type="text/css" />
+			<script type="text/javascript" src="/stylesheets/new_files/jquery.min.js"></script>
+			<div class="element-separator">
+				<hr>
+				<h3 class="section-break-title">Endereço Secudário</h3>
+			</div>
+			<div class="element-select"><label class="title"><span class="required"></span></label>
+				<div class="item-cont">
+					<div class="medium"><span><select name="select1" required="required">
+								<option value="Comercial">Comercial</option>
+								<option value="Residencial">Residencial</option>
+								<option value="Correspondência">Correspondência</option>
+								<option value="Cobrança">Cobrança</option>
+								<option value="Rural">Rural</option>
+								<option value="Casa de praia">Casa de praia</option>
+							</select><i></i><span class="icon-place"></span></span></div>
+				</div>
+			</div>
+			<div class="element-number"><label class="title"><span class="required"></span></label>
+				<div class="item-cont"><input class="small" type="text" min="0" max="100" name="number1"
+						required="required" placeholder="CEP*" OnKeyPress="formatar('###-##', this)" value="" /><span
+						class="icon-place"></span></div>
+			</div>
+			<div class="element-input"><label class="title"><span class="required"></span></label>
+				<div class="item-cont"><input class="medium" type="text" name="input" required="required"
+						placeholder="Logradouro*" /><span class="icon-place"></span></div>
+			</div>
+			<div class="element-number"><label class="title"><span class="required"></span></label>
+				<div class="item-cont"><input class="small" type="text" min="0" max="100" name="number2"
+						required="required" placeholder="Número*" value="" /><span class="icon-place"></span></div>
+			</div>
+			<div class="element-input"><label class="title"></label>
+				<div class="item-cont"><input class="large" type="text" name="input2" placeholder="Complemento" /><span
+						class="icon-place"></span></div>
+			</div>
+			<div class="element-input"><label class="title"><span class="required"></span></label>
+				<div class="item-cont"><input class="medium" type="text" name="input1" required="required"
+						placeholder="Cidade*" /><span class="icon-place"></span></div>
+			</div>
+			<div class="element-select"><label class="title"><span class="required"></span></label>
+				<div class="item-cont">
+					<div class="small"><span><select name="select" required="required" placeholder="Estado*">
+								<option value="       AC"> AC</option>
+								<option value="       AL"> AL</option>
+								<option value="       AP"> AP</option>
+								<option value="       AM"> AM</option>
+								<option value="       BA"> BA</option>
+								<option value="       CE"> CE</option>
+								<option value="       DF"> DF</option>
+								<option value="       ES"> ES</option>
+								<option value="       GO"> GO</option>
+								<option value="       MA"> MA</option>
+								<option value="       MS"> MS</option>
+								<option value="       MT"> MT</option>
+								<option value="       MG"> MG</option>
+								<option value="       PA"> PA</option>
+								<option value="       PB"> PB</option>
+								<option value="       PR"> PR</option>
+								<option value="       PE"> PE</option>
+								<option value="       PI"> PI</option>
+								<option value="       RJ"> RJ</option>
+								<option value="       RN"> RN</option>
+								<option value="       RS"> RS</option>
+								<option value="       RO"> RO</option>
+								<option value="       RR"> RR</option>
+								<option value="       SC"> SC</option>
+								<option value="       SP"> SP</option>
+								<option value="       SE"> SE</option>
+								<option value="       TO"> TO</option>
+							</select><i></i><span class="icon-place"></span></span></div>
+				</div>
+			</div><br />
+		</div> <input type="submit" onclick="Mudarestado('minhaDiv')" value="Adic./Remov. Endereço">
+		<div class="submit"><input type="submit" onclick="Cancelar()" value="Voltar" /><input type="submit"
+				onclick="Salvar()" value="Salvar" /></div>
+	</form>
+	<p class="frmd">bootstrap form
+		<script type="text/javascript" src="/stylesheets/new_files/formoid-solid-blue.js"></script>
+
+</body>
+
+</html>
